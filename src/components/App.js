@@ -35,7 +35,7 @@ class App extends Component {
       walletLoaded: false,
       txState : '',
       price:'',
-      priceStable:'',
+      price:'',
       web3Socket: {},
       ethSwapWebSocket: {},
       lastReceivedEvent: { 'Event' : 'no event'}      
@@ -156,9 +156,9 @@ class App extends Component {
       // this.setState({ totalSupply: totalSupply });
       this.setState({ price : price })
       console.log("price is" , price);
-      const priceStable = await ethSwap.methods.priceStable().call();
-      this.setState({ priceStable : priceStable })
-      console.log("stableprice is" , priceStable);
+      const price = await ethSwap.methods.price().call();
+      this.setState({ price : price })
+      console.log("price is" , price);
  
 
     //load USDT 
@@ -348,7 +348,7 @@ this.setState({
               buyTokens={this.buyTokens}
               sellTokens={this.sellTokens}
               price = {this.state.price}
-              priceStable = {this.state.priceStable}
+              price = {this.state.price}
             />            
           </div>          
           {/* <div className="col-md-6" >
